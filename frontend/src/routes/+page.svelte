@@ -83,6 +83,8 @@
 
 	.search-section {
 		margin-bottom: var(--space-2xl);
+		position: relative;
+		z-index: 10;
 	}
 
 	.topic-grid {
