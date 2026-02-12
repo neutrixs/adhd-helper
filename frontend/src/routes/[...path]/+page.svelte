@@ -142,9 +142,13 @@
 
 	.search-section {
 		margin-bottom: var(--space-xl);
+		position: relative;
+		z-index: 10;
 	}
 
 	.markdown-body {
+		position: relative;
+		z-index: 1;
 		margin-bottom: var(--space-2xl);
 	}
 
