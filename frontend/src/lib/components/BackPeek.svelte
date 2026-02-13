@@ -34,6 +34,7 @@
 		directionLocked = false;
 		isHorizontal = false;
 		swipeProgress = 0;
+		document.body.classList.add('swiping');
 	}
 
 	function handleTouchMove(e) {
@@ -62,6 +63,7 @@
 	function handleTouchEnd() {
 		if (!isSwiping) return;
 		isSwiping = false;
+		document.body.classList.remove('swiping');
 
 		if (swipeProgress >= THRESHOLD) {
 			// Complete the swipe
@@ -120,7 +122,10 @@
 	.back-peek-container {
 		position: relative;
 		min-height: 100dvh;
-		overflow-x: hidden;
+	}
+
+	:global(body.swiping) {
+		overflow-x: clip;
 	}
 
 	.peek-current {
