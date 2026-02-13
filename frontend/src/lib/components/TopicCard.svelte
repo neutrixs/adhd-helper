@@ -1,7 +1,7 @@
 <script>
-	export let title = '';
-	export let description = '';
-	export let href = '/';
+	export let title = "";
+	export let description = "";
+	export let href = "/";
 </script>
 
 <a class="topic-card" {href}>
@@ -11,7 +11,13 @@
 	{/if}
 	<div class="card-arrow">
 		<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-			<path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			<path
+				d="M7 4l6 6-6 6"
+				stroke="currentColor"
+				stroke-width="1.5"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
 		</svg>
 	</div>
 </a>
@@ -20,6 +26,7 @@
 	.topic-card {
 		display: block;
 		position: relative;
+		height: 100%;
 		background: var(--bg-card);
 		border: 1px solid var(--border-light);
 		border-radius: var(--radius-md);
@@ -36,7 +43,7 @@
 	}
 
 	.topic-card::before {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -87,7 +94,9 @@
 		top: var(--space-lg);
 		right: var(--space-md);
 		color: var(--text-muted);
-		transition: color var(--duration-fast) var(--ease-out), transform var(--duration-normal) var(--ease-out);
+		transition:
+			color var(--duration-fast) var(--ease-out),
+			transform var(--duration-normal) var(--ease-out);
 	}
 
 	.topic-card:hover .card-arrow {
