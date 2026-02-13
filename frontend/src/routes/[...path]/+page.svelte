@@ -75,22 +75,39 @@
 				</nav>
 			{/if}
 
-			<div class="search-section fade-in" style="animation-delay: 60ms">
-				<SearchBox scope={topicPath} placeholder="Search within this topic..." />
-			</div>
+			{#if topic.children && topic.children.length > 0}
+				<div
+					class="search-section fade-in"
+					style="animation-delay: 60ms"
+				>
+					<SearchBox
+						scope={topicPath}
+						placeholder="Search within this topic..."
+					/>
+				</div>
+			{/if}
 
 			{#if topic.contentHtml}
-				<article class="markdown-body fade-in" style="animation-delay: 100ms">
+				<article
+					class="markdown-body fade-in"
+					style="animation-delay: 100ms"
+				>
 					{@html topic.contentHtml}
 				</article>
 			{/if}
 
 			{#if topic.children && topic.children.length > 0}
-				<section class="children-section fade-in" style="animation-delay: 140ms">
+				<section
+					class="children-section fade-in"
+					style="animation-delay: 140ms"
+				>
 					<h2 class="children-heading">Subtopics</h2>
 					<div class="children-grid">
 						{#each topic.children as child, i}
-							<div class="fade-in" style="animation-delay: {180 + i * 50}ms">
+							<div
+								class="fade-in"
+								style="animation-delay: {180 + i * 50}ms"
+							>
 								<TopicCard
 									title={child.title}
 									description={child.description}
